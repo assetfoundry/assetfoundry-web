@@ -24,7 +24,7 @@ export function Contact() {
       setStatus("sent");
     } catch {
       setStatus("idle");
-      alert("Something went wrong — please email gwh@assetfoundry.com directly.");
+      alert("Something went wrong — please try again shortly.");
     }
   }
 
@@ -123,12 +123,7 @@ export function Contact() {
 
             <div className="mt-6 pt-6 border-t border-border flex items-center justify-center gap-2 text-sm text-muted-foreground">
               <Mail className="w-4 h-4" />
-              <a
-                href="mailto:gwh@assetfoundry.com"
-                className="hover:text-foreground transition-colors"
-              >
-                gwh@assetfoundry.com
-              </a>
+              <span>Lake Worth, FL · U.S. Government Approved Vendor</span>
             </div>
           </motion.div>
         </div>

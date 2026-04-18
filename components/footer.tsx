@@ -63,7 +63,7 @@ export function Footer() {
 
         <div className="border-t border-border pt-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-muted-foreground">
           <span>© {new Date().getFullYear()} Asset Foundry Inc. All rights reserved.</span>
-          <span>+1 888-274-0133 · Lake Worth, FL</span>
+          <span>Lake Worth, FL · U.S. Government Approved Vendor</span>
         </div>
       </div>
     </footer>
