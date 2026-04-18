@@ -14,8 +14,18 @@ export function Contact() {
   async function handleSubmit(e: React.SyntheticEvent<HTMLFormElement>) {
     e.preventDefault();
     setStatus("sending");
-    await new Promise((r) => setTimeout(r, 1200));
-    setStatus("sent");
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, message }),
+      });
+      if (!res.ok) throw new Error("Failed");
+      setStatus("sent");
+    } catch {
+      setStatus("idle");
+      alert("Something went wrong — please email gwh@assetfoundry.com directly.");
+    }
   }
 
   return (
