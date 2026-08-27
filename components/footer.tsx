@@ -12,13 +12,19 @@ const links = {
     { label: "Why Us", href: "#why" },
     { label: "Contact", href: "#contact" },
   ],
+  // Carrier reviewers verify these are reachable from the site before
+  // approving an A2P 10DLC messaging campaign. Keep them linked here.
+  Legal: [
+    { label: "Privacy Policy", href: "/privacy" },
+    { label: "Terms of Service", href: "/terms" },
+  ],
 };
 
 export function Footer() {
   return (
     <footer className="border-t border-border py-16">
       <div className="container mx-auto px-6">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-10 mb-12">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-10 mb-12">
           <div className="col-span-2 space-y-4">
             <Link href="/" className="flex items-center gap-2.5">
               <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
@@ -63,7 +69,15 @@ export function Footer() {
 
         <div className="border-t border-border pt-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-muted-foreground">
           <span>© {new Date().getFullYear()} Asset Foundry Inc. All rights reserved.</span>
-          <span>Lake Worth, FL · U.S. Government Approved Vendor</span>
+          <div className="flex items-center gap-4">
+            <Link href="/privacy" className="hover:text-foreground transition-colors">
+              Privacy
+            </Link>
+            <Link href="/terms" className="hover:text-foreground transition-colors">
+              Terms
+            </Link>
+            <span>Lake Worth, FL · U.S. Government Approved Vendor</span>
+          </div>
         </div>
       </div>
     </footer>
